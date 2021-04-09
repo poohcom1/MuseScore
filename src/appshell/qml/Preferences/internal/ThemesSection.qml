@@ -30,10 +30,10 @@ Column {
         spacing: 106
 
         delegate: Column {
-            spacing: 16
-
             width: 112
             height: 120
+
+            spacing: 16
 
             ThemeSample {
                 strokeColor: modelData.strokeColor
@@ -43,21 +43,8 @@ Column {
                 buttonColor: modelData.buttonColor
                 accentColor: modelData.accentColor
 
-                MouseArea{
-                    anchors.fill: parent
-                    hoverEnabled: true
-
-                    onClicked: {
-                        root.themeChangeRequested(model.index)
-                    }
-
-                    onEntered: {
-                        parent.border.color = modelData.accentColor
-                    }
-
-                    onExited: {
-                        parent.border.color = modelData.backgroundPrimaryColor
-                    }
+                onClicked: {
+                    root.themeChangeRequested(model.index)
                 }
             }
 

@@ -38,7 +38,7 @@ PreferencesPage {
         AccentColorsSection {
             width: parent.width
 
-            colors: appearanceModel.accentColorSamples()
+            colors: appearanceModel.accentColors
             currentColorIndex: appearanceModel.currentAccentColorIndex
             firstColumnWidth: parent.firstColumnWidth
 
@@ -50,8 +50,6 @@ PreferencesPage {
         SeparatorLine {}
 
         UiFontSection {
-            width: parent.width
-
             allFonts: appearanceModel.allFonts()
             currentFontIndex: appearanceModel.currentFontIndex
             bodyTextSize: appearanceModel.bodyTextSize
@@ -89,7 +87,7 @@ PreferencesPage {
             }
 
             onWallpaperPathChangeRequested: {
-                appearanceModel.backgroundWallpaperPath = wallpaperPath
+                appearanceModel.backgroundWallpaperPath = newWallpaperPath
             }
         }
 
